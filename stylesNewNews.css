@@ -1,0 +1,92 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+.container{
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 20px;
+    height: 250px;
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: black;
+    
+}
+#btns-top{
+    display: flex;
+    gap: 15px;
+}
+#btns-top button{
+    height: 50px;
+    width: 200px;
+    font-family: popins sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f8ed26;
+    border-radius: 10px;
+
+}
+button{
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.category h1{
+    text-align: center;
+    height: 42px;
+    width: 190px;
+    background-color: white;
+    border-radius: 5px;
+}
+.container>a>h1{
+    background-color: aliceblue;
+    border-radius: 5px;
+    width: 130px;
+    text-align: center;
+}
+.category-under{
+    display: flex;
+    gap: 10px;
+}
+.category-under button{
+   font-size: 24px;
+   font-family: poppins sans-serif;
+   border-radius: 5px;
+   text-align: center;
+   background-color: #f8ed26;
+   /* font-weight: bold; */
+}
+
+.newsStyle{
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: antiquewhite;
+    
+}
+.newsStyle button{
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+}
+.display-contents{
+    font-size: 20px;
+}
