@@ -33,10 +33,18 @@ function onloadData(parentElements, arr) {
     for (let news of arr) {
        const h2 = document.createElement("h2");
        const div = document.createElement("div");
-       div.className = "newsStyle"
+       const div2 = document.createElement("div");
+       div2.className = "bottom-newNews"
+       const heart = document.createElement("div");
+       heart.className = "heartbtn";
+       heart.addEventListener('click',function () {
+            heart.className = "red"
+       })
+       div.className = "newsStyle";
        h2.textContent = `By ${news[' author']}`;
        const p = document.createElement("p");
-       p.innerHTML = `${news.content} <a href=${news.url}>Read more....</a>`;
+       const link = document.createElement("p");
+       p.innerHTML = `${news.content} <a href=${news.url}>READ MORE</a>`;
        const btnElements = document.createElement("button");
        btnElements.textContent = "Save News";
        btnElements.addEventListener("click", function () {
@@ -52,7 +60,9 @@ function onloadData(parentElements, arr) {
        });
        div.append(h2);
        div.append(p);
-       div.append(btnElements);
+       div.append(div2)
+       div2.append(btnElements);
+       div2.append(heart)
        parentElements.appendChild(div);
     }
  }
@@ -72,8 +82,8 @@ function onloadData(parentElements, arr) {
        btnElements.textContent = "Delete News";
        btnElements.addEventListener('click',()=>{
          
-       })
-       p.innerHTML = `${news.content} <a href=${news.url}>Read more....</a>`;
+       }) 
+       p.innerHTML = `${news.content} <a href=${news.url}>READ MORE</a>`;
        div.append(h2);
        div.append(p);
        div.append(btnElements)

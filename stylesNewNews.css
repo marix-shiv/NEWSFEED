@@ -90,3 +90,57 @@ button{
 .display-contents{
     font-size: 20px;
 }
+.bottom-newNews{
+    margin-top: 10px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.heartbtn{
+    position: relative;
+    width: 25px;
+    height: 22px;
+    margin-right: 10px;
+}
+.heartbtn::before,
+.heartbtn::after{
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 0;
+    width: 12px;
+    height: 20px;
+    background-color: rgb(144, 126, 126);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.heartbtn::after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+.red{
+    position: relative;
+    width: 25px;
+    height: 22px;
+    margin-right: 10px;
+}
+.red::before,
+.red::after{
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 0;
+    width: 12px;
+    height: 20px;
+    background-color: rgb(241, 24, 24);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.red::after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
