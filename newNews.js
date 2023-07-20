@@ -38,7 +38,11 @@ function onloadData(parentElements, arr) {
        const heart = document.createElement("div");
        heart.className = "heartbtn";
        heart.addEventListener('click',function () {
+         if(heart.className == 'heartbtn'){
             heart.className = "red"
+         }else{
+            heart.className = 'heartbtn'
+         }
        })
        div.className = "newsStyle";
        h2.textContent = `By ${news[' author']}`;
