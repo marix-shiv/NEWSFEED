@@ -9,7 +9,7 @@ const myNewsFeed = document.querySelector(".my-newsFeed");
 const newNews = document.querySelector(".new-news");
 const clear = document.querySelector(".clear");
 let counter = 0;
-
+let id = 0;
 
 clear.addEventListener('click',function(){
     localStorage.clear();
@@ -54,6 +54,7 @@ function onloadData(parentElements, arr) {
        btnElements.addEventListener("click", function () {
           btnElements.style.backgroundColor = "red";
           const localData = JSON.parse(localStorage.getItem("oldnews"));
+          news['id'] = id++;
           if (localData && localData.length > 0) {
              localData.push(news);
  
@@ -78,14 +79,28 @@ function onloadData(parentElements, arr) {
        const h2 = document.createElement("h2");
        const div = document.createElement("div");
        div.className = "newsStyle"
-       div.id = counter;
-       counter++;
+       div.id = news['id'];
        h2.textContent = `By ${news[' author']}`;
        const p = document.createElement("p");
        const btnElements = document.createElement("button");
+       console.log(news);
        btnElements.textContent = "Delete News";
        btnElements.addEventListener('click',()=>{
-         
+
+         // Delete the data from localstorage
+         let idToDelete = news['id'];
+         const localData = JSON.parse(localStorage.getItem("oldnews"));
+         let newLocalData =  [];
+         for(let data of localData){
+            if(data['id'] != idToDelete){
+               newLocalData.push(data);
+            }
+         }
+         // Set the updated data back to localstorage
+         localStorage.setItem("oldnews", JSON.stringify(newLocalData));
+         // Delete the element from UI.
+         removeElement(news['id']);
+
        }) 
        p.innerHTML = `${news.content} <a href=${news.url}>READ MORE</a>`;
        div.append(h2);
@@ -183,3 +198,13 @@ science.addEventListener('click', function () {
    })
 })
 
+
+/**
+ * Delete the given element.
+ * @param {*} id 
+ * @returns 
+ */
+function removeElement(id) {
+   var elem = document.getElementById(id);
+   return elem.parentNode.removeChild(elem);
+}
